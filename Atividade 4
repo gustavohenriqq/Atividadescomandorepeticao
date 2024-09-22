@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class Atividade4 {
+  public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+        int numero;
+        int somaPares = 0;
+        int produtoImpares = 1;
+        boolean temImpar = false;
+
+        while (true) {
+            System.out.print("Digite um número inteiro positivo (ou um número negativo para encerrar): ");
+            numero = scanner.nextInt();
+
+            
+            if (numero < 0) {
+                break;
+            }
+
+           
+            if (numero % 2 == 0) {
+                somaPares += numero;
+            } else { 
+                produtoImpares *= numero;
+                temImpar = true;
+            }
+        }
+
+        System.out.println("Soma dos números pares: " + somaPares);
+        if (temImpar) {
+            System.out.println("Produto dos números ímpares: " + produtoImpares);
+        } else {
+            System.out.println("Nenhum número ímpar foi inserido.");
+        }
+
+       
+}
+    
+  
+}
