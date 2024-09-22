@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class Atividade6 {
+  public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+
+        
+        int totalKills = 0, totalDeaths = 0, totalAssists = 0;
+
+        
+        int killsRodada, deathsRodada, assistsRodada;
+
+        boolean vencedor = false;
+
+        
+        while (!vencedor) {
+            
+            System.out.print("Há um vencedor? (sim ou não): ");
+            String resposta = scanner.next();
+
+            if (resposta.equalsIgnoreCase("sim")) {
+                vencedor = true;
+                break;
+            }
+
+            
+            System.out.print("Digite o número de kills nesta rodada: ");
+            killsRodada = scanner.nextInt();
+            System.out.print("Digite o número de deaths nesta rodada: ");
+            deathsRodada = scanner.nextInt();
+            System.out.print("Digite o número de assists nesta rodada: ");
+            assistsRodada = scanner.nextInt();
+
+            
+            totalKills += killsRodada;
+            totalDeaths += deathsRodada;
+            totalAssists += assistsRodada;
+
+            
+            if (totalKills <= 5) {
+                System.out.println("noob");
+            }
+            if (totalKills >= 20) {
+                System.out.println("master");
+            }
+            if (totalDeaths >= 20) {
+                System.out.println("Houston, we have a problem");
+            }
+            if (totalAssists >= 20) {
+                System.out.println("team work");
+            }
+
+            
+            System.out.println("Total kills: " + totalKills);
+            System.out.println("Total deaths: " + totalDeaths);
+            System.out.println("Total assists: " + totalAssists);
+            System.out.println(); // Linha em branco para formatar a saída
+        }
+
+        System.out.println("O campeonato terminou. Um vencedor foi declarado!");
+       
+    
+}
+    
+  
+}
