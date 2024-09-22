@@ -1,0 +1,115 @@
+import java.util.Scanner;
+class Atividade7 {
+  public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+        int opcao, colunas;
+
+        while (true) {
+           
+            System.out.println("Escolha a forma geométrica:");
+            System.out.println("1 - Retângulo");
+            System.out.println("2 - Diagonal Superior Esquerda");
+            System.out.println("3 - Diagonal Superior Direita");
+            System.out.println("4 - Diagonal Inferior Esquerda");
+            System.out.println("5 - Diagonal Inferior Direita");
+            System.out.println("6 - Sair");
+            System.out.print("Digite sua opção: ");
+            opcao = scanner.nextInt();
+
+            
+            if (opcao == 6) {
+                System.out.println("Saindo do programa.");
+                break;
+            }
+
+            
+            System.out.print("Digite a quantidade de colunas: ");
+            colunas = scanner.nextInt();
+
+            
+            switch (opcao) {
+                case 1:
+                    retangulo(colunas);
+                    break;
+                case 2:
+                    diagonalSuperiorEsquerda(colunas);
+                    break;
+                case 3:
+                    diagonalSuperiorDireita(colunas);
+                    break;
+                case 4:
+                    diagonalInferiorEsquerda(colunas);
+                    break;
+                case 5:
+                    diagonalInferiorDireita(colunas);
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+
+            System.out.println(); 
+        }
+
+        scanner.close();
+    }
+
+    
+    public static void retangulo(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+    public static void diagonalSuperiorEsquerda(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = i; j < colunas; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+    public static void diagonalSuperiorDireita(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("  "); 
+            }
+            for (int j = i; j < colunas; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+    public static void diagonalInferiorEsquerda(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+    public static void diagonalInferiorDireita(int colunas) {
+        for (int i = 0; i < colunas; i++) {
+            for (int j = 0; j < colunas - i - 1; j++) {
+                System.out.print("  "); // Espaços em branco para alinhar os asteriscos à direita
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+  
+}
