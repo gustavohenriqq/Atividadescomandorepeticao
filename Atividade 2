@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class Atividade2 {
+  public static void main(String[] args) {
+    
+    Scanner entrada = new Scanner(System.in);
+
+    double num1 ;
+	int num2 ;
+    
+    
+        System.out.print("Digite um número real (A): ");
+		num1 = entrada.nextDouble();
+
+        System.out.print("Digite um número inteiro (B): ");
+		num2 = entrada.nextInt();
+
+        double produto = 0.0;
+
+        for (int i = 0; i < num2; i++) {
+
+            produto += num1;
+
+        }
+
+        if (num2 < 0) {
+
+            produto = -produto;
+
+        }
+
+
+        System.out.println("O produto de A por B é: " + produto);
+
+  
+    }
+    
+  
+}
