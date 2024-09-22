@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    
+    Scanner entrada = new Scanner(System.in);
+    
+    int numero1;
+    
+    System.out.println("Digite um número; ");
+    numero1 = entrada.nextInt();
+    
+    System.out.println("Os próximos 100 números após " + numero1 + "são: ");
+    
+    for(int i=numero1 + 1; i<=numero1 + 100; i++) {
+      System.out.println(i + " ");
+    }
+    
+  }
+}
